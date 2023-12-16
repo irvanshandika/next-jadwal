@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
-import AcmeLogo from "./AcmeLogo";
+import AcmeLogo from "@icons/AcmeLogo";
 
 const NavigasiBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -23,11 +23,13 @@ const NavigasiBar = () => {
   return (
     <>
       <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
+        <NavbarContent className="flex justify-between items-center w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
           <NavbarBrand>
-            <AcmeLogo />
-            <p className="font-bold text-inherit">Jadwal Kuliah</p>
+            <Link href="/" className="text-black">
+              <AcmeLogo />
+              <p className="font-bold text-inherit">Jadwal Kuliah</p>
+            </Link>
           </NavbarBrand>
         </NavbarContent>
 

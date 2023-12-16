@@ -1,6 +1,6 @@
 "use client";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type Jadwal = {
   id: number;
@@ -31,25 +31,53 @@ const JadwalData: React.FC = () => {
 
   return (
     <>
-      <div className="lg:px-10 py-10">
-        <Table aria-label="Example static collection table">
-          <TableHeader>
-            <TableColumn align="center">Hari</TableColumn>
-            <TableColumn align="center">Waktu</TableColumn>
-            <TableColumn align="center">Mata Kuliah</TableColumn>
-            <TableColumn align="center">Ruangan</TableColumn>
-          </TableHeader>
-          <TableBody>
-            {jadwal.map((item) => (
-              <TableRow key={item.id}>
-                <TableCell align="center">{item.hari}</TableCell>
-                <TableCell align="center">{item.waktu}</TableCell>
-                <TableCell align="center">{item.mataKuliah}</TableCell>
-                <TableCell align="center">{item.ruangan}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+      <div className="lg:mx-10 my-10">
+        {jadwal.length === 0 ? (
+          <Table aria-label="Example empty table">
+            <TableHeader>
+              <TableColumn align="center" className="bg-zinc-200">
+                Hari
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Waktu
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Mata Kuliah
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Ruangan
+              </TableColumn>
+            </TableHeader>
+            <TableBody emptyContent={"Horee Tidak Ada Jadwal Pengganti 🥳"}>{[]}</TableBody>
+          </Table>
+        ) : (
+          <Table aria-label="Example static collection table">
+            <TableHeader>
+              <TableColumn align="center" className="bg-zinc-200">
+                Hari
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Waktu
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Mata Kuliah
+              </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Ruangan
+              </TableColumn>
+            </TableHeader>
+            <TableBody>
+              {jadwal.map((item) => (
+                <TableRow key={item.id}>
+                  <TableCell align="center">{item.hari}</TableCell>
+                  <TableCell align="center">{item.waktu}</TableCell>
+                  <TableCell align="center">{item.mataKuliah}</TableCell>
+                  <TableCell align="center">{item.ruangan}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        )}
       </div>
     </>
   );
