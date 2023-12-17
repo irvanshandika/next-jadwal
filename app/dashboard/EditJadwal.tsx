@@ -5,12 +5,12 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDi
 import { EditIcon } from "@icons/EditIcon";
 
 type Jadwal = {
-    id: number;
-    hari: string;
-    waktu: string;
-    mataKuliah: string;
-    ruangan: string;
-  };
+  id: number;
+  hari: string;
+  waktu: string;
+  mataKuliah: string;
+  ruangan: string;
+};
 
 function EditJadwal(jadwal: Jadwal) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -27,7 +27,7 @@ function EditJadwal(jadwal: Jadwal) {
     setIsMutating(true);
 
     try {
-      await fetch("https://pemrograman.vercel.app/api/jadwal", {
+      await fetch(`https://pemrograman.vercel.app/api/jadwal/${jadwal.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -58,7 +58,9 @@ function EditJadwal(jadwal: Jadwal) {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Edit Jadwal <span className="font-bold">{jadwal.mataKuliah}</span></ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">
+                Edit Jadwal <span className="font-bold">{jadwal.mataKuliah}</span>
+              </ModalHeader>
               <form onSubmit={handleUpdate}>
                 <ModalBody>
                   <Input label="Hari" className="my-4" placeholder="Masukkan Hari" value={hari} onChange={(e) => setHari(e.target.value)} required />
