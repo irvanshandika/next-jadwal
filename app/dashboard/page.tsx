@@ -1,14 +1,14 @@
 import React from "react";
 import { Metadata } from "next";
-import FormJadwal from "./FormJadwal";
+import Dashboard from "./Dashboard";
 
 export const metadata: Metadata = {
-  title: "Tambah Jadwal",
+  title: "Dashboard",
 };
 function page() {
   return (
     <>
-      <FormJadwal />
+      <Dashboard />
     </>
   );
 }

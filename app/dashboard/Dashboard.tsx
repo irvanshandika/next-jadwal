@@ -1,6 +1,9 @@
 "use client";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link, Button } from "@nextui-org/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import TambahJadwal from "./TambahJadwal";
+import DeleteJadwal from "./DeleteJadwal";
+import EditJadwal from "./EditJadwal";
 
 type Jadwal = {
   id: number;
@@ -17,10 +20,10 @@ async function getJadwal() {
 }
 
 // Perbaiki fungsi komponen agar dapat diakses dengan benar
-const JadwalData: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [jadwal, setJadwal] = useState<Jadwal[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const jadwalData: Jadwal[] = await getJadwal();
       setJadwal(jadwalData);
@@ -33,9 +36,7 @@ const JadwalData: React.FC = () => {
     <>
       <div className="lg:mx-10 my-10">
         <div className="my-4">
-          <Link href="/dashboard">
-            <Button className="bg-blue-500 hover:bg-blue-400 text-white">Dashboard</Button>
-          </Link>
+          <TambahJadwal />
         </div>
         {jadwal.length === 0 ? (
           <Table aria-label="Example empty table">
@@ -70,6 +71,9 @@ const JadwalData: React.FC = () => {
               <TableColumn align="center" className="bg-zinc-200">
                 Ruangan
               </TableColumn>
+              <TableColumn align="center" className="bg-zinc-200">
+                Aksi
+              </TableColumn>
             </TableHeader>
             <TableBody>
               {jadwal.map((item) => (
@@ -78,6 +82,10 @@ const JadwalData: React.FC = () => {
                   <TableCell align="center">{item.waktu}</TableCell>
                   <TableCell align="center">{item.mataKuliah}</TableCell>
                   <TableCell align="center">{item.ruangan}</TableCell>
+                  <TableCell align="center">
+                    <EditJadwal id={item.id} hari={item.hari} waktu={item.waktu} mataKuliah={item.mataKuliah} ruangan={item.ruangan} />
+                    <DeleteJadwal id={item.id} hari={item.hari} waktu={item.waktu} mataKuliah={item.mataKuliah} ruangan={item.ruangan} />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -88,4 +96,4 @@ const JadwalData: React.FC = () => {
   );
 };
 
-export default JadwalData;
+export default Dashboard;
