@@ -11,7 +11,7 @@ type Jadwal = {
 };
 
 async function getJadwal() {
-  const res = await fetch("https://pemrograman.vercel.app/api/jadwal");
+  const res = await fetch("https://jadwal-express.vercel.app/api/jadwal");
   const data = await res.json();
   return data;
 }

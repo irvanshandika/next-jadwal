@@ -15,28 +15,37 @@ type Jadwal = {
 export default function DeleteJadwal(jadwal: Jadwal) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isMutating, setIsMutating] = useState(false);
+  const [confirmationInput, setConfirmationInput] = useState("");
 
   const router = useRouter();
 
   async function handleDelete(jadwalId: number) {
+    if (confirmationInput !== jadwal.mataKuliah) {
+      // Show an error message or take appropriate action if the input doesn't match
+      return;
+    }
+
     setIsMutating(true);
     try {
-      await fetch(`https://pemrograman.vercel.app/api/jadwal/${jadwalId}`, {
+      await fetch(`https://jadwal-express.vercel.app/api/jadwal/${jadwalId}`, {
         method: "DELETE",
       });
-      setIsMutating(false);
-      router.refresh();
-      router.push("/dashboard"); // kembali ke halaman jadwal
+
+      // Add a slight delay before refreshing and pushing to ensure deletion completes
+      setTimeout(() => {
+        setIsMutating(false);
+        router.refresh();
+        router.push("/dashboard"); // kembali ke halaman jadwal
+      }, 500); // You can adjust the delay as needed
     } catch (error) {
       console.error(error); // tampilkan kesalahan di konsol
       setIsMutating(false);
     }
   }
+
   return (
     <>
-      <Button onPress={onOpen} color="danger" size="sm" endContent={<DeleteIcon />}>
-        Delete
-      </Button>
+      <Button onPress={onOpen} color="danger" size="sm" endContent={<DeleteIcon />}></Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           <>
@@ -45,11 +54,11 @@ export default function DeleteJadwal(jadwal: Jadwal) {
               <h1 className="font-medium text-lg">
                 Apakah Kamu Yakin Menghapus <span className="font-bold">{jadwal.mataKuliah}</span> ?
               </h1>
-              <Input required />
+              <Input required value={confirmationInput} onChange={(e) => setConfirmationInput(e.target.value)} />
             </ModalBody>
             <ModalFooter>
               {!isMutating ? (
-                <Button type="button" color="danger" onClick={() => handleDelete(jadwal.id)}>
+                <Button type="button" color="danger" onClick={() => handleDelete(jadwal.id)} disabled={!confirmationInput.trim()}>
                   Delete
                 </Button>
               ) : (

@@ -27,7 +27,7 @@ function EditJadwal(jadwal: Jadwal) {
     setIsMutating(true);
 
     try {
-      await fetch(`https://pemrograman.vercel.app/api/jadwal/${jadwal.id}`, {
+      await fetch(`https://jadwal-express.vercel.app/api/jadwal/${jadwal.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -42,7 +42,8 @@ function EditJadwal(jadwal: Jadwal) {
       setWaktu("");
       setMataKuliah("");
       setRuangan("");
-      router.push("/jadwal-pengganti");
+      router.refresh();
+      router.push("/dashboard");
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
@@ -51,9 +52,7 @@ function EditJadwal(jadwal: Jadwal) {
   }
   return (
     <>
-      <Button onPress={onOpen} size="sm" className="bg-green-500 hover:bg-green-300 text-white" endContent={<EditIcon />}>
-        Edit
-      </Button>
+      <Button onPress={onOpen} size="sm" className="bg-green-500 hover:bg-green-300 text-white" endContent={<EditIcon />}></Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (

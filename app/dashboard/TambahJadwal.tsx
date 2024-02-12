@@ -19,7 +19,7 @@ function TambahJadwal() {
     setIsMutating(true);
 
     try {
-      await fetch("https://pemrograman.vercel.app/api/jadwal", {
+      await fetch("https://jadwal-express.vercel.app/api/jadwal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -34,7 +34,8 @@ function TambahJadwal() {
       setWaktu("");
       setMataKuliah("");
       setRuangan("");
-      router.push("/jadwal-pengganti");
+      router.refresh();
+      router.push("/dashboard");
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {

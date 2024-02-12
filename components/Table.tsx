@@ -16,7 +16,7 @@ function TableJadwal() {
     return jadwal.slice(start, end);
   }, [page, jadwal]);
   return (
-    <div className="lg:mx-28 lg:my-[115px]">
+    <div className="lg:mx-28 lg:my-[115px] md:my-[90px] sm:my-[90px]">
       <Table
         aria-label="Example table with client side pagination"
         bottomContent={

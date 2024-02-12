@@ -14,7 +14,7 @@ type Jadwal = {
 };
 
 async function getJadwal() {
-  const res = await fetch("https://pemrograman.vercel.app/api/jadwal");
+  const res = await fetch("https://jadwal-express.vercel.app/api/jadwal");
   const data = await res.json();
   return data;
 }
@@ -71,9 +71,7 @@ const Dashboard: React.FC = () => {
               <TableColumn align="center" className="bg-zinc-200">
                 Ruangan
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
-                Aksi
-              </TableColumn>
+              <TableColumn className="bg-zinc-200 flex justify-center items-center">Aksi</TableColumn>
             </TableHeader>
             <TableBody>
               {jadwal.map((item) => (
@@ -82,8 +80,10 @@ const Dashboard: React.FC = () => {
                   <TableCell align="center">{item.waktu}</TableCell>
                   <TableCell align="center">{item.mataKuliah}</TableCell>
                   <TableCell align="center">{item.ruangan}</TableCell>
-                  <TableCell align="center">
-                    <EditJadwal id={item.id} hari={item.hari} waktu={item.waktu} mataKuliah={item.mataKuliah} ruangan={item.ruangan} />
+                  <TableCell className="flex justify-center items-center">
+                    <div className="mr-2">
+                      <EditJadwal id={item.id} hari={item.hari} waktu={item.waktu} mataKuliah={item.mataKuliah} ruangan={item.ruangan} />
+                    </div>
                     <DeleteJadwal id={item.id} hari={item.hari} waktu={item.waktu} mataKuliah={item.mataKuliah} ruangan={item.ruangan} />
                   </TableCell>
                 </TableRow>
