@@ -2,6 +2,7 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
 import AcmeLogo from "@icons/AcmeLogo";
+import ThemeSwitcher from "@components/ThemeSwitcher";
 
 const NavigasiBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -19,6 +20,9 @@ const NavigasiBar = () => {
       title: "Tentang",
       url: "/tentang",
     },
+    {
+      title: <ThemeSwitcher/>
+    }
   ];
   return (
     <>

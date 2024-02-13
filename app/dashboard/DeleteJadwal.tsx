@@ -21,7 +21,6 @@ export default function DeleteJadwal(jadwal: Jadwal) {
 
   async function handleDelete(jadwalId: number) {
     if (confirmationInput !== jadwal.mataKuliah) {
-      // Show an error message or take appropriate action if the input doesn't match
       return;
     }
 
@@ -31,12 +30,11 @@ export default function DeleteJadwal(jadwal: Jadwal) {
         method: "DELETE",
       });
 
-      // Add a slight delay before refreshing and pushing to ensure deletion completes
       setTimeout(() => {
         setIsMutating(false);
         router.refresh();
-        router.push("/dashboard"); // kembali ke halaman jadwal
-      }, 500); // You can adjust the delay as needed
+        router.push("/dashboard");
+      }, 500);
     } catch (error) {
       console.error(error); // tampilkan kesalahan di konsol
       setIsMutating(false);
