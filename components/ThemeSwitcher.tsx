@@ -22,7 +22,7 @@ function ThemeSwitcher() {
   if (!mounted) return null;
 
   // Save current theme to localStorage
-  const saveThemeToLocalStorage = (selectedTheme) => {
+  const saveThemeToLocalStorage = (selectedTheme: string) => {
     localStorage.setItem("theme", selectedTheme);
   };
 
