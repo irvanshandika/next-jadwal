@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Metadata } from "next";
 import NavigasiBar from "@components/NavigasiBar";
 import Footer from "@components/Footer";
 import ArrowDown from "@icons/ArrowDown";
@@ -11,10 +10,6 @@ import { dropdownData } from "@components/dropdown";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
-
-export const metadata: Metadata = {
-  title: "Playground",
-};
 
 function Playground() {
   const [dropdownStates, setDropdownStates] = useState(dropdownData.map(() => false));
