@@ -33,8 +33,7 @@ function ThemeSwitcher() {
 
   // JSX for displaying current theme, icon, and switch component
   return (
-    <div className="flex justify-items-center">
-      <span className="mr-2">{theme === "light" ? "Light Mode" : "Dark Mode"}</span>
+    <div className="inline-flex justify-center items-center">
       <Switch
         checked={theme === "dark"}
         onChange={() => {

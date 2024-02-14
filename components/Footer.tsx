@@ -7,26 +7,27 @@ const Footer = () => {
     <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
       <div className="text-center">
         <div>
-          <a className="flex-none text-xl font-bold text-violet-500 dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="Brand">
+          <a target="_blank" className="flex-none text-xl font-bold text-violet-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="Brand">
             Jadwal Mata Kuliah
           </a>
         </div>
 
         <div className="mt-3">
-          <p className="text-gray-500">
+          <p className="text-gray-500 dark:text-white">
             We're part of the{" "}
-            <a className="font-semibold text-violet-500 hover:text-violet-400 dark:text-blue-500 dark:hover:text-blue-400" href="/">
+            <a target="_blank" className="font-semibold text-violet-500 hover:text-violet-400" href="/">
               AMIKOM
             </a>{" "}
             family.
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-500 dark:text-white">
             <span className="font-roboto">©</span> Preline. {year} Irvan. All rights reserved.
           </p>
         </div>
 
         <div className="mt-3 space-x-2">
           <a
+            target="_blank"
             className="inline-flex justify-center items-center w-10 h-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
             href="mailto:contact@irvanshandika.my.id">
             <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -34,6 +35,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
+            target="_blank"
             className="inline-flex justify-center items-center w-10 h-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
             href="https://www.threads.net/@irvan_shandika">
             <svg className="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -48,6 +50,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
+            target="_blank"
             className="inline-flex justify-center items-center w-10 h-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
             href="https://github.com/irvanshandika">
             <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -55,6 +58,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
+            target="_blank"
             className="inline-flex justify-center items-center w-10 h-10 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
             href="https://www.instagram.com/irvan_shandika/">
             <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 14 14">

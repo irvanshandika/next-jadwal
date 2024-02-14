@@ -41,16 +41,16 @@ const Dashboard: React.FC = () => {
         {jadwal.length === 0 ? (
           <Table aria-label="Example empty table">
             <TableHeader>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Hari
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Waktu
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Mata Kuliah
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Ruangan
               </TableColumn>
             </TableHeader>
@@ -59,19 +59,19 @@ const Dashboard: React.FC = () => {
         ) : (
           <Table aria-label="Example static collection table">
             <TableHeader>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Hari
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Waktu
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Mata Kuliah
               </TableColumn>
-              <TableColumn align="center" className="bg-zinc-200">
+              <TableColumn align="center" className="bg-zinc-200 dark:bg-zinc-950">
                 Ruangan
               </TableColumn>
-              <TableColumn className="bg-zinc-200 flex justify-center items-center">Aksi</TableColumn>
+              <TableColumn className="bg-zinc-200 flex justify-center items-center dark:bg-zinc-950">Aksi</TableColumn>
             </TableHeader>
             <TableBody>
               {jadwal.map((item) => (

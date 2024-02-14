@@ -21,8 +21,12 @@ const NavigasiBar = () => {
       url: "/tentang",
     },
     {
-      title: <ThemeSwitcher/>
-    }
+      title: "Playground",
+      url: "/playground",
+    },
+    {
+      title: <ThemeSwitcher />,
+    },
   ];
   return (
     <>
@@ -30,7 +34,7 @@ const NavigasiBar = () => {
         <NavbarContent className="flex justify-between items-center w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
           <NavbarBrand>
-            <Link href="/" className="text-black">
+            <Link href="/" className="text-black dark:text-white">
               <AcmeLogo />
               <p className="font-bold text-inherit">Jadwal Kuliah</p>
             </Link>

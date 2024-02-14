@@ -50,7 +50,7 @@ export default function DeleteJadwal(jadwal: Jadwal) {
             <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
             <ModalBody>
               <h1 className="font-medium text-lg">
-                Apakah Kamu Yakin Menghapus <span className="font-bold">{jadwal.mataKuliah}</span> ?
+                Apakah Kamu Yakin Menghapus <span className="font-black">{jadwal.mataKuliah}</span> ?
               </h1>
               <Input required value={confirmationInput} onChange={(e) => setConfirmationInput(e.target.value)} />
             </ModalBody>
