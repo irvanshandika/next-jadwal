@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 function NotFound() {
   return (
     <div className="grid justify-items-center items-center mt-20 font-google">
-      <Image src={ErrorComputer} alt="Not Found" fetchPriority="high" />
+      <Image src={ErrorComputer} alt="Not Found" fetchPriority="low" />
       <h1 className="text-violet-800 font-bold text-lg">404 - Not Found!</h1>
       <p className="lg:text-lg text-sm">Sepertinya Halaman Yang Anda Cari Tidak Ditemukan.</p>
       <div className="mt-2">
