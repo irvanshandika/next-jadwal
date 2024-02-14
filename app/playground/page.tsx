@@ -49,7 +49,7 @@ function Playground() {
                 <p className="text-gray-800 dark:text-gray-200">{item.description}</p>
                 <div className="mt-3">
                   <Link href={item.url}>
-                    <Button className="text-white bg-blue-500 hover:bg-blue-400">{item.logo && <Image className={item.class} src={item.logo} alt="Logo" />}</Button>
+                    <Button className="text-white bg-blue-500 hover:bg-blue-400">{item.logo && <Image className={item.class} src={item.logo} fetchPriority="low" alt="Logo" />}</Button>
                   </Link>
                 </div>
               </div>
