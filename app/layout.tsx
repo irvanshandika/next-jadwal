@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Partytown } from "@builder.io/partytown/react";
+import PrelineScript from "@components/PrelineScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Providers>{children}</Providers>
         <Partytown debug={true} forward={["dataLayer.push"]} />
+        <PrelineScript />
         <script src="https://static.cloudflareinsights.com/beacon.min.js" type="text/partytown" />
       </body>
     </html>
