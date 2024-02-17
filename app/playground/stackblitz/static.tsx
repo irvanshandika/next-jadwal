@@ -9,7 +9,7 @@ function Javascript() {
   return (
     <>
       <div className="flex justify-center mt-4">
-        <iframe src="https://stackblitz.com/edit/js-wtmdbw?embed=1&file=index.js&theme=dark" className="w-[1000px] h-[500px]"></iframe>
+        <iframe src="https://stackblitz.com/edit/js-wtmdbw?embed=1&file=index.html&file=index.js&theme=dark" className="w-full h-[500px]"></iframe>
       </div>
     </>
   );
