@@ -14,13 +14,6 @@ const Footer = () => {
 
         <div className="mt-3">
           <p className="text-gray-500 dark:text-white">
-            We're part of the{" "}
-            <a target="_blank" className="font-semibold text-violet-500 hover:text-violet-400" href="/">
-              AMIKOM
-            </a>{" "}
-            family.
-          </p>
-          <p className="text-gray-500 dark:text-white">
             <span className="font-roboto">©</span> Preline. {year} Irvan. All rights reserved.
           </p>
         </div>

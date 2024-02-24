@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useMemo, useState } from "react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, Link } from "@nextui-org/react";
 import { jadwal } from "./data";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@components/ui/alert-dialog";
+import { Button } from "@components/ui/button";
 
 function TableJadwal() {
   const [page, setPage] = useState(1);
-  const rowsPerPage = 4;
+  const rowsPerPage = 3;
 
   const pages = Math.ceil(jadwal.length / rowsPerPage);
 
@@ -46,9 +49,25 @@ function TableJadwal() {
               <TableCell align="center">{item.NamaDosen}</TableCell>
               <TableCell align="center">{item.Ruang}</TableCell>
               <TableCell align="center">
-                <Link href={item.ZoomURL} target="_blank">
-                  Zoom
-                </Link>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button variant="outline">Zoom</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Peringatan!</AlertDialogTitle>
+                      <AlertDialogDescription>Untuk mengakses URL Zoom, diharuskan menggunakan akun students yang masih berstatus sebagai mahasiswa aktif di AMIKOM Yogyakarta</AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Batal</AlertDialogCancel>
+                      <AlertDialogAction>
+                        <Link href={item.ZoomURL} target="_blank">
+                          Lanjutkan
+                        </Link>
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </TableCell>
             </TableRow>
           )}

@@ -3,6 +3,7 @@ import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
 import AcmeLogo from "@icons/AcmeLogo";
 import ThemeSwitcher from "@components/ThemeSwitcher";
+import { title } from "process";
 
 const NavigasiBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
