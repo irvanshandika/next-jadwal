@@ -1,4 +1,3 @@
-import React from "react";
 export const jadwal = [
   {
     IdHari: 0,

@@ -27,7 +27,7 @@ const JadwalData: React.FC = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures that this effect runs once, similar to componentDidMount
+  }, []);
 
   return (
     <>

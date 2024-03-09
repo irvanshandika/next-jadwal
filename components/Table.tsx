@@ -8,7 +8,7 @@ import { Button } from "@components/ui/button";
 
 function TableJadwal() {
   const [page, setPage] = useState(1);
-  const rowsPerPage = 3;
+  const rowsPerPage = 10;
 
   const pages = Math.ceil(jadwal.length / rowsPerPage);
 
